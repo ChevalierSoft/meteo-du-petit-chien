@@ -14,7 +14,7 @@
 	<div class="centrage">
 		<h2>🐶 Potit Chien</h2>
 
-		<?php 
+		<?php
 
 			$tmp = main();
 			$t = intval($tmp);
@@ -56,7 +56,7 @@
 	}
 
     function ameneTonBoule($url){
-    	
+
 		$ch = curl_init();
 		$timeout = 5; // on met un petit timeout de 5 sec
 		curl_setopt ($ch, CURLOPT_URL, $url);
@@ -76,11 +76,11 @@
 		else if ($t>=28 && $t<40){
 			echo 'Actuellement on creve de chaud 🌭<br>';
 			?>
-			<img src="ladoc/chien_chaud.jpg" width="50%" height="50%">
+			<img src="data/chien_chaud.jpg" width="50%" height="50%">
 			<?php
 		}
 		else if ($t>=24 && $t<28)
-			echo "il fait chaud";
+			echo "il fait chaud 🐶";
 		else if ($t>=19 && $t<24)
 			echo "Il fait bon 😊";
 		else if ($t>=14 && $t<19)
@@ -92,9 +92,9 @@
 		else if ($t>=-20 && $t<-5)
 			echo "Niveau de surgélation dehors 🥶";
 		else if ($t<-20)
-			echo "Bienvenu en syberie 🖼️";
+			echo "Bienvenue en syberie 🖼️";
 		else
-			echo "🤖 Ouvrez la fenetre, is ok, tout va bien ;) (⚠️ Le serveur brule! L'information est incompréenssible! ⚠️ )";
+			echo "🤖 Ouvrez la fenêtre, is ok, tout va bien ;) (⚠️ Le serveur brule! L'information est incompréenssible! ⚠️ )";
 		echo "</p>";
 
 	}
