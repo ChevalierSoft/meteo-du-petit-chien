@@ -4,9 +4,21 @@
 	<meta charset="ISO-8859-1">
 	<meta http-equiv="refresh" content="40">
 	<title>🐶 La meteo du petit chien</title>
+	<?php
+		$c = "#F2F5A9";
+		$h = date("H",time());
+		//echo($h);
+		$h = intval($h);
+		/*echo($h);
+		if ($h>10 && $h<20); //intval($h)
+			$c = "#F2F5A9";
+		else 
+			$c = "#000000";*/
+		//<?php $c 
+	?>
 	<style type="text/css"> 	
-		body 		{background-image: linear-gradient(to bottom, #000000, #8888ee 100%); color: #F781F3; background-attachment: fixed; margin: 0;} 
-		.centrage 	{text-align: center;}
+		body 		{background-image: linear-gradient(to bottom, <?php echo $c; ?>, #8888ee 100%); color: #F781F3; background-attachment: fixed; margin: 0; } 
+		.centrage 	{text-align: center; display: table-cell; vertical-align: middle;}
 	</style>
 </head>
 
@@ -21,6 +33,10 @@
 
 			echo "<h1><br>Il fait " . $t . "° </h1>";
 			aff_degueu($t);
+
+			$ti=time();
+			echo(date("d/m",$ti) . "<br>");
+			echo(date("h:i:s",$ti));		
 
 		?>
 	</div>
