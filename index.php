@@ -20,27 +20,58 @@
 			position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 			text-align: center; display: table-cell; vertical-align: middle;
 		}
+		ul
+		{
+			padding:0;
+			margin:0;
+			list-style-type:none;
+		}
+		li
+		{
+			float:left;
+			border-left:0px solid black;
+			width:100px;
+			font-style:bold;
+		}
+
 		/*background-color: rgba(248, 247, 216, 0.7);*/
 	</style>
 </head>
 
 <body>
 	<div class="centrage">
-		<h2><img src = "data/Logo.png"></h2>	<!-- affichage du logo -->
+		<h2><img src = "data/Logo.png"/></h2>	<!-- affichage du logo -->
 		<?php	// debut du php
 			echo "<h1>";
 			$ti=time();	// met a jour l'heure
 			echo(date("d/M",$ti) . "<br>");	//affiche la date
-			echo "</h2>";
+			echo "</h1>";
 
 			$temperature_matin	= "0";
 			$temperature_midi	= "0";
 			$temperature_soir	= "0";
 
 			main($temperature_matin, $temperature_midi, $temperature_soir);
+			// echo $temperature_matin . " | " . $temperature_midi . " | " . $temperature_soir;
+			?>
+				</br>
+				<center>
+				<ul>
+					<li>Matin <br>
+						<?php echo $temperature_matin ?> °C
+					</li>
+					<li>Midi <br>
+						<?php echo $temperature_midi ?> °C
+					</li>
+					<li>Soir<br>
+						<?php echo $temperature_soir ?> °C
+					</li>
+				</ul>
+				</center>
+				</br>
+				</br>
 
-			echo $temperature_matin . " | " . $temperature_midi . " | " . $temperature_soir;
-
+			<?php
 			//echo "<h1><br>Il fait " . $t . "° </h1>";
 			aff_degueu($temperature_midi);
 
@@ -182,4 +213,3 @@
 		echo "</p>";
 	}
 ?>
-
